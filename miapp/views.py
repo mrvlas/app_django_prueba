@@ -9,7 +9,7 @@ from django.contrib import messages # Libreria Para mostrar mensajes flash
 nombre_autor_web="Vladimir Guajardo"
 
 # se crea una lista 
-lenguajes = ['python', 'C#', 'Java', 'PHP', 'Type Script']
+lenguajes = ['python', 'C#', 'Java', 'PHP', 'Type Script', 'JavaScript']
 
 def index(request):
     return render ( request, 'index.html', {

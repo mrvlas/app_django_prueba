@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title  %}
+            <!-- Titulo para diferentes páginas-->
+        {% endblock %}
+        | vlasBot</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+</head>
+
+<body>
+
+    <!-- Cabecera de la pagina-->
+    <header>
+        <div id="logotipo">
+            <!-- Logo Django-->
+            <img src="{% static 'images/logo.png' %}"/>
+            <h1>Sitio web con Django</h1>
+        </div>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'hola_mundo' %}">Hola Mundo</a>
+            </li>
+            <li>
+                <a href="{% url 'contacto' %}">Contacto</a>
+            </li>
+            <li>
+                <a href="{% url 'quienes_somos' %}">Quienes Somos</a>
+            </li>
+            <li>
+                <a href="{% url 'listado_articulos' %}">Listado de Articulos</a>
+            </li>
+            <li>
+                <a href="{% url 'create_article' %}">Crear Articulo</a>
+            </li>
+              <li>
+                <a href="{% url 'creacion_full_articulo' %}">Crear Articulo full</a>
+            </li>
+        </ul> 
+    </nav>
+
+    <div  id="contenido">
+        <div class="box">
+     
+            {% block content %}
+            <!-- codigo que viene de templates-->
+            <strong>Esto esta en el bloque padre</strong>
+            {% endblock %}
+        </div>
+    </div>
+        
+
+
+    <footer>
+        Master en Python por Vladimir Guajardo | {% now "d/m/Y" %}
+    </footer>
+
+</body>
+
+</html>

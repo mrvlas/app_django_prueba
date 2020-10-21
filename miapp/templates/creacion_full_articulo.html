@@ -1,0 +1,23 @@
+<!--Para heredar de una plantilla-->
+{% extends 'layout.html' %}
+
+{% block title %} formulario en Django  {% endblock %}
+
+{% block content %}
+
+<h1> Crear un Artículo </h1>
+<br>
+<form action=" {% url 'creacion_full_articulo' %}" method="POST">
+     
+     {% comment 'Para enviar los datos a traves del metodo post, es necesario usar el csrf_token' %}
+     {% endcomment %}
+     
+     {% csrf_token %}
+
+        {{form}}
+
+<input type="submit" value="Guardar"/>
+
+</form>
+
+{% endblock %}    

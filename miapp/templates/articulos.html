@@ -1,0 +1,37 @@
+<!--Para heredar de una plantilla-->
+{% extends 'layout.html' %}
+
+{% block title %} Listado de Articulos {% endblock %}
+
+{% block content %}
+
+<h1 class="title">Listado de Artículos</h1>
+
+<!-- Acá se mostrara el mesaje flash-->
+{% if messages  %}
+    {% for message in messages %}
+        <div class="message">
+            {{message}}
+        </div>
+    {% endfor %}
+
+{% endif %}
+ 
+ <ul>
+    {% for articulo in articulos %}
+        <li>
+            {{articulo.id}} - <strong> {{articulo.titulo}} </strong>
+            <p> {{articulo.contenido}}</p>
+            <a href="{% url 'borrar_articulo' articulo.id %}">Borrar</a>
+        </li>
+        <br>
+    {% endfor %}
+</ul>
+
+{% comment 'esto es un comentario' %}
+{% endcomment %}
+
+{{ejemplo}}
+ 
+
+{% endblock %}    

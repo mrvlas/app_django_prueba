@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %} Contacto {% endblock %}
+
+{% block content %}
+{{block.super}}
+    <h1 class="title">Contacto</h1>
+    <p>Bienvenido a la página de contacto</ps>
+
+{% comment 'aca se realizara una condicional' %}
+{% endcomment %}
+    <br>
+{% if contacto  %}
+
+    <p>{{contacto}}</p>
+{% else %}
+    <strong>El contacto no existe!</strong>
+{% endif %}
+
+
+{% endblock %}

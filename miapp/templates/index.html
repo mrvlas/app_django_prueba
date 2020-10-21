@@ -1,0 +1,36 @@
+<!--Para heredar de una plantilla-->
+{% extends 'layout.html' %}
+
+{% block title %}
+    Esto es un titulo
+{% endblock %}
+
+{% block content %}
+{% comment 'esto es un comentario' %}
+{% endcomment %}
+
+
+    <h1 class="title">{{titulo}}</h1>
+    <p>Bienvenidos al inicio de la página</p>
+    <br>
+   <strong> {{mi_variable}} </strong>
+   <br>
+   {% if nombre_autor  %}
+    <spam>{{nombre_autor}} </spam>
+   
+   {% else %}
+        <strong>El nombre no existe</strong>
+
+    <p><spam>El nombre no existe </spam></p>
+   {% endif %}
+   </br>
+   <br>
+   <h3>Los Lenguajes de programacion son los siguientes: </h3>
+   <ul>
+    {% for lenguajes  in lenguajes %}
+        <li>{{lenguajes}}</li>
+    {% endfor %}
+   </ul>
+   </br>
+
+{% endblock %}    
